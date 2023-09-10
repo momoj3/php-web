@@ -4,7 +4,7 @@ $dataCon = connectDB();
 
 
 $prefix     = $_POST['prefix'];
-$fristname  = $_POST['firstname'];
+$fristname  = $_POST['fristname'];
 $lastname   = $_POST['lastname'];
 $gender     = $_POST['gender'];
 $idcard     = $_POST['idcard'];
