@@ -48,6 +48,13 @@ $dataQuery = mysqli_query($dataCon,$sql);
 
     <h1 class="mt-5">รายการข้อมูลผู้รับบริการ</h1>
 
+    <!--ปุ่มสำหรับเพิ่มข้อมูลเข้าตาราง-->
+    <div class "d-grid gap-2 d-md-block">
+    <a class="btn btn-success" href="create.php" role="button">เพิ่มข้อมูล</a>
+    <!--<button type="button" class="btn btn-success">Success</button>-->
+    <!--<button type="button" class="btn btn-success">link</button>-->
+    </div>
+
     <!-- ฟอร์มค้นหา -->
     <div class="d-flex justify-content-end">
         <form>
@@ -68,6 +75,8 @@ $dataQuery = mysqli_query($dataCon,$sql);
                 <th>ชื่อ - สกุล</th>
                 <th>วัน/เดือน/ปี เกิด</th>
                 <th>โทรศัพท์</th>
+                <th>จัดการข้อมูล</th>
+                
             </tr>
         </thead>
         <tbody>
@@ -78,9 +87,11 @@ $dataQuery = mysqli_query($dataCon,$sql);
                     <tr>
                         <td><?php echo $dataResult['id']; ?></td>
                         <td><?php echo $dataResult['idcard']; ?></td>
-                        <td><?php echo $dataResult['prefix'],'. ', $dataResult['first_name'], ' ', $dataResult['last_name']; ?></td>
+                        <td><?php echo $dataResult['prefix'],'. ', $dataResult['frist_name'], ' ', $dataResult['last_name']; ?></td>
                         <td><?php echo $dataResult['birthdate']; ?></td>
                         <td><?php echo $dataResult['mobile']; ?></td>
+                        <td><a href="update.php?id=<?php echo $dataResult['id']; ?>" class="btn btn-warning btn-sm">แก้ไขข้อมูล</a>
+                        <a href="#" class="btn btn-danger btn-sm">ลบ</a></td>
                     </tr>
 
             <?php    } ?>
